@@ -92,11 +92,11 @@ class CalcController{
 
     initButtonsEvensts(){
     
-        let buttons = document.querySelectorAll("button");
+        let buttons = document.querySelectorAll(" #buttons > row , button");
         buttons.forEach((btn, index)=>{
              this.addEventListenerAll(btn,"click drag", e =>{
  
-                 let txtBtn = btn.className.baseVal.replace("btn btn-number col-sm "," ");
+                 let txtBtn = btn.className.replace("btn btn-number col-sm btn-","" ).replace("btn btn-others col-sm btn-","");
                 // this.execBtn(txtBtn);replace("btn-","")
                  console.log(txtBtn);
                 
@@ -112,6 +112,27 @@ class CalcController{
         
  
      }
+
+    /* initButtonsEvensts(){
+    
+        let buttons = document.querySelectorAll("#buttons > g, #parts > g");
+        buttons.forEach((btn, index)=>{
+             this.addEventListenerAll(btn,"click drag", e =>{
+ 
+                 let txtBtn = btn.className.baseVal.replace("btn-","");
+                 this.execBtn(txtBtn);
+ 
+             });
+         
+             this.addEventListenerAll(btn,"mouseover mouseup mousedown", e =>{
+                 btn.style.cursor = "pointer";
+             });
+ 
+        });
+ 
+        
+ 
+     }*/
      addEventListenerAll(element,events,fn){
     
         events.split (' ').forEach(event =>{
