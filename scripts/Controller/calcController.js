@@ -65,23 +65,20 @@ class CalcController{
         this.displayCalc = lastNumber;
 
     }
+
     pushOperation(value){
-    
-    
         this._operation.push(value);
 
         if(this._operation.length > 3){
-           
 
             this.calc();
-
 
             console.log(this._operation);
 
         }
 
     }
-
+    // metodo de calcular
     calc(){
     
         let last = '';
