@@ -1,5 +1,6 @@
 <!--DOCTYPE html-->
 <html>
+
 <head>
 
     <meta charset="utf-8" />
@@ -8,103 +9,115 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
     <style>
-    body {
-        background-color:#050505;
-    /*@media (max-width: 300px.98px);*/
-    }
-    .center {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translateX(-50%) translateY(-50%);
-        
-    }
-    
-    #calculadora {
-        background-color: #B1B1B1;
-        width: 322px;
-        height: 450px;
-        padding: 6px;
-    }
-    #calculadora .btn {
-        margin: 2px;
-        border-radius: 0;
-        min-height: 44px;
-        outline: none;
-        box-shadow: none;
-    }
-    #calculadora .btn:hover {
-        background-color: #BCBCBC;
-    }
-    #calculadora .btn:active {
-        background-color: #909090;
-    }
-    header {
-        height: 150px;
-        font-size: 36px;
-        font-weight: bold;
-        position: relative;
-    }
-    #display {
-        color: #000;
-        text-align: right;
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        font-size: 48px;
-        font-weight: 600;
-    }
-    .btn-number {
-        background-color: #EFEFEF;
-        font-size: 24px;
-        padding-top: 0;
-        padding-bottom: 0;
-        font-weight: 600;
-    }
-    .btn-others {
-        background-color: #D1D1D1;
-        padding-top: 0;
-        padding-bottom: 0;
-        font-size: 20px;
-    }
-    .data {
-        font-size: 20px;
-        color: #000;
-        text-align: left;
-        position: relative;
-        width: 1px;
-        height: 1px;
+        body {
+            background-color: #050505;
+            /*@media (max-width: 300px.98px);*/
+        }
 
-    }
-    .hora{
-        font-size: 20px;
-        color: #000;
-        text-align: right;
-        position: relative;
-    }
+        .center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+
+        }
+
+        #calculadora {
+            background-color: #B1B1B1;
+            width: 322px;
+            height: 450px;
+            padding: 6px;
+        }
+
+        #calculadora .btn {
+            margin: 2px;
+            border-radius: 0;
+            min-height: 44px;
+            outline: none;
+            box-shadow: none;
+        }
+
+        #calculadora .btn:hover {
+            background-color: #BCBCBC;
+        }
+
+        #calculadora .btn:active {
+            background-color: #909090;
+        }
+
+        header {
+            height: 150px;
+            font-size: 36px;
+            font-weight: bold;
+            position: relative;
+        }
+
+        #display {
+            color: #000;
+            text-align: right;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            font-size: 48px;
+            font-weight: 600;
+        }
+
+        .btn-number {
+            background-color: #EFEFEF;
+            font-size: 24px;
+            padding-top: 0;
+            padding-bottom: 0;
+            font-weight: 600;
+        }
+
+        .btn-others {
+            background-color: #D1D1D1;
+            padding-top: 0;
+            padding-bottom: 0;
+            font-size: 20px;
+        }
+
+        .data {
+            font-size: 20px;
+            color: #000;
+            text-align: left;
+            position: relative;
+            width: 1px;
+            height: 1px;
+
+        }
+
+        .hora {
+            font-size: 20px;
+            color: #000;
+            text-align: right;
+            position: relative;
+        }
     </style>
 </head>
+
 <body>
-    
+
     <div class="center">
         <div id="calculadora">
             <header>
+               
                 <div id="data" class="data"></div>
                 <div id="hora" class="hora"></div>
                 <hr>
-                   
+
                 <div id="display">
-                        
-                    
-                    
+
+
+
 
                 </div>
             </header>
-            <section  id="buttons" class="container">
+            <section id="buttons" class="container">
                 <div class="row">
                     <button type="button" class="btn btn-others col-sm btn-porcento">%</button>
                     <button type="button" class="btn btn-others col-sm btn-raiz">√</button>
-                    <button type="button" class="btn btn-others col-sm btn-x²" >x²</button>
+                    <button type="button" class="btn btn-others col-sm btn-x²">x²</button>
                     <button type="button" class="btn btn-others col-sm btn-¹/x">¹/x</button>
                 </div>
                 <div class="row">
@@ -143,4 +156,5 @@
     <script src=" scripts/controller/CalcController.js"></script>
     <script src="scripts/calculator.js"></script>
 </body>
+
 </html>
