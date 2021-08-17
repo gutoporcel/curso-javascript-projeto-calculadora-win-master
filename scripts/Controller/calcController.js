@@ -286,7 +286,7 @@ class CalcController{
  
                  let txtBtn = btn.className.replace("btn btn-number col-sm btn-","" ).replace("btn btn-others col-sm btn-","");
                  this.execBtn(txtBtn);
-                 console.log(txtBtn);
+                 //console.log(txtBtn);
                 
  
              });
@@ -445,11 +445,63 @@ class CalcController{
 
     clearlastNumber(){
 
-        //this._operation.pop();
-        this.getLastItem().pop();
-        this.setLastNumberToDisplay();
+       this.setLastNumberToDisplay();
+      //  let buttons = document.querySelector(" #buttons > row , button");
+       // buttons.pop();
+           // let txtBtn = btn.className.substring(0,buttons.length-1);
+           // this.execBtn(txtBtn);str.slice(0, -1);
+         //   console.log(buttons);
+           
+      /*      
+         setLastNumberToDisplay(){
+            let lastNumber = this.getLastItem(false);
+    
+           
+            if (!lastNumber) lastNumber = 0;  
+    
+            this.displayCalc = lastNumber;
+    
+        }
+*/
+
+
+        
+
+        /*
+        let buttons = document.querySelectorAll(" #buttons > row , button");
+        buttons.forEach((btn, index)=>{
+             this.addEventListenerAll(btn,"click drag", e =>{
+ 
+                 let txtBtn = btn.className.replace("btn btn-number col-sm btn-","" ).replace("btn btn-others col-sm btn-","");
+                 this.execBtn(txtBtn);
+                 console.log(txtBtn);
+                
+ 
+             });
+         
+             this.addEventListenerAll(btn,"mouseover mouseup mousedown", e =>{
+                 btn.style.cursor = "pointer";
+             });
+ 
+        
+        
+        
+        
+        function apagar() {
+  let input = document.que('input');
+  let inputText = input.value;
+  input.value = inputText.substring(0,inputText.length-1);
+  console.log(input.value);
+} 
+        let input = document.querySelector('button');
+
+        this._operation.pop();
+        
+        this.setLastNumberToDisplay();*/
 
     }
+
+
     getLastOperation(value){
     
     
