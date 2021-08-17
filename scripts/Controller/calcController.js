@@ -398,7 +398,9 @@ class CalcController{
             case 'igual':
                 this.calc();
                 break; 
-                
+            case'seta':
+                this.clearlastNumber();
+                break;
             case 'ponto':
                 this.addDot('.');
                 
@@ -437,6 +439,14 @@ class CalcController{
     clearEntry(){
 
         this._operation.pop();
+        this.setLastNumberToDisplay();
+
+    }
+
+    clearlastNumber(){
+
+        //this._operation.pop();
+        this.getLastItem().pop();
         this.setLastNumberToDisplay();
 
     }
@@ -502,24 +512,7 @@ class CalcController{
 
 /*
     //anderline e pivado ==  this._dataAtual;
-        constructor(){
-    
-           // this._audio = new Audio('click.mp3');
-          //  this._audioOnOff= false;
-          //  this._lastOperator = '';  
-          //  this._lastNumber = '';      
-          //  this._operation =[];
-           // this._locale = 'pt-BR';
-           // this._displayCalcEl = document.querySelector("#display");
-           // this._dateEl =  document.querySelector("#data");
-           // this._timeEl =  document.querySelector("#hora");       
-           // this.currentDate;
-           // this.initialize();
-           // this.initButtonsEvensts();
-           // this.initKeyboard();
-           // this.copyToClipboard();
-    
-        }
+     
     
       
    
