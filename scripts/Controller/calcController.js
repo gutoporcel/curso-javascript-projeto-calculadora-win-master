@@ -445,16 +445,21 @@ class CalcController{
 
     clearlastNumber(){
 
+        console.log(this.getResult());
         let lista = this._operation.toString().split("");
-  
+        
+        
     console.log(lista);
     lista.pop();
     console.log(lista);
+    lista.join("");
+    console.log(lista.join(""));
+    this.setLastNumberToDisplay();
   // let lista = console.log(this._operation.toString().split("").pop());
   //  console.log(this._operation.pop());
  //  console.log(this._lastNumber.pop());
 //   this.setLastNumberToDisplay();
-   
+   //console.log(this.getResult());
     //console.log(lista.pop());
    // console.log(this.lastOperation);
    // console.log(this.setLastNumberToDisplay());
