@@ -428,7 +428,7 @@ class CalcController{
 
     clearAll(){
     
-        this._operation =[];
+        this._operation;
         this._lastNumber ='';
         this._lastOperator = '';
 
@@ -445,7 +445,22 @@ class CalcController{
 
     clearlastNumber(){
 
-       this.setLastNumberToDisplay();
+        let lista = this._operation.toString().split("");
+  
+    console.log(lista);
+    lista.pop();
+    console.log(lista);
+  // let lista = console.log(this._operation.toString().split("").pop());
+  //  console.log(this._operation.pop());
+ //  console.log(this._lastNumber.pop());
+//   this.setLastNumberToDisplay();
+   
+    //console.log(lista.pop());
+   // console.log(this.lastOperation);
+   // console.log(this.setLastNumberToDisplay());
+      // this.setLastNumberToDisplay();
+
+
       //  let buttons = document.querySelector(" #buttons > row , button");
        // buttons.pop();
            // let txtBtn = btn.className.substring(0,buttons.length-1);
