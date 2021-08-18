@@ -451,10 +451,13 @@ class CalcController{
         
     console.log(lista);
     lista.pop();
+    lista = this.getResult();
     console.log(lista);
     lista.join("");
     console.log(lista.join(""));
     this.setLastNumberToDisplay();
+    console.log(this.getResult());
+    this.displayCalc = lista;
   // let lista = console.log(this._operation.toString().split("").pop());
   //  console.log(this._operation.pop());
  //  console.log(this._lastNumber.pop());
