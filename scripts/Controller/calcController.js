@@ -428,7 +428,7 @@ class CalcController{
 
     clearAll(){
     
-        this._operation;
+        this._operation =[];
         this._lastNumber ='';
         this._lastOperator = '';
 
@@ -516,76 +516,3 @@ class CalcController{
 
 }
 
-
-/*
-    //anderline e pivado ==  this._dataAtual;
-     
-    
-      
-   
-    
-    
-    
-        initialize(){
-            this.setDisplayDateTime();
-             setInterval(()=>{
-    
-                this.setDisplayDateTime();
-             },1000  );
-             this.setLastNumberToDisplay();
-             this.pasteFromClipboard();
-    
-            document.querySelectorAll('.btn-ac').forEach(btn =>{
-    
-                btn.addEventListener('dblclick', e=>{
-    
-                    this.toggleAudio();
-    
-    
-                });
-    
-            });
-            
-        }
-    
-        
-    
-        setDisplayDateTime(){
-            this.displayDate = this.currentDate.toLocaleDateString(this._locale,{
-                day:"2-digit",month:"long",year:"numeric"
-            });
-            this.displayTime = this.currentDate.toLocaleTimeString(this._locale); 
-    
-        }
-    
-        get displayTime(){
-            return this._timeEl.innerHTML;
-    
-        }
-    
-        set displayTime(value){
-             this._timeEl.innerHTML = value;
-    
-        }
-    
-        get displayDate(){
-           return this._dateEl.innerHTML;
-    
-        }
-    
-        set displayDate(value){
-    
-            this._dateEl.innerHTML = value;
-    
-        }
-        get currentDate(){
-            return new Date();
-       }
-       
-       set currentDate(value){
-    
-           this.currentDate = value;
-       }
-    
-    
-    }*/
