@@ -447,6 +447,7 @@ class CalcController{
     let lista = this._operation.toString().split(' ');
     console.log(lista.length);
     console.log(lista.pop());
+    this.setLastNumberToDisplay();
     console.log(lista);
     console.log( lista.join());
     this._operation = lista.toString();
