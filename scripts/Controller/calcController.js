@@ -442,17 +442,31 @@ class CalcController{
         this.setLastNumberToDisplay();
 
     }
-
+    
     clearlastNumber(){
-    let lista = this._operation.toString().split(' ');
+        let lastNumber2 =[];
+        for (let i = this._operation.length-1; i >=0; i--) {
+            if(!this.isOperation(this._operation[i])){//  se nao for um aperador   a esclamação esta negando
+
+                console.log(lastNumber2 =this._operation[i].toString().split(""));
+                console.log(lastNumber2.pop());
+            }
+            this.displayCalc = lastNumber2;
+        }
+
+
+//https://pt.stackoverflow.com/questions/345796/como-limpar-remover-todos-elementos-do-array-em-javascript
+/*
+    let lista = this._operation.toString().split('');
     console.log(lista.length);
     console.log(lista.pop());
     this.setLastNumberToDisplay();
     console.log(lista);
-    console.log( lista.join());
-    this._operation = lista.toString();
+    console.log( lista.join(' '));
+    //lista2 = lista.join(' '); 
+    this._operation = lista2.toString();
     this.displayCalc = lista.toString();
- 
+ */
         
 
     }
