@@ -119,7 +119,7 @@ class CalcController{
         this.displayCalc = lastNumber;
 
     }
-
+////
     pushOperation(value){
         this._operation.push(value);
 
@@ -466,6 +466,7 @@ class CalcController{
         }
        // lastNumber2.join("");
         //console.log(this._operation = v2);
+        pushOperation(lastNumber2)
 this.addOperation(this._operation);
         this.displayCalc = lastNumber2;
 
