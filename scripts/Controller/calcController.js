@@ -6,7 +6,7 @@ class CalcController{
         this._audioOnOff= false;
         this._lastOperator = '';  
         this._lastNumber = '';      
-        this._operation =[];
+        this._operation =[];//vetor
         this._locale = 'pt-BR';
         this._displayCalcEl = document.querySelector("#display");
         this._dateEl =  document.querySelector("#data");
@@ -447,13 +447,26 @@ class CalcController{
         let lastNumber2 =[];
         for (let i = this._operation.length-1; i >=0; i--) {
             if(!this.isOperation(this._operation[i])){//  se nao for um aperador   a esclamação esta negando
-
                 console.log(lastNumber2 =this._operation[i].toString().split(""));
-                console.log(lastNumber2.pop());
+                 //for (let a = lastNumber2.length-1; a >=0 ; a--) {
+                     
+                    console.log(lastNumber2.pop());
+                    lastNumber2.join("");
+                  //  console.log(this._operation = lastNumber2);
+                    // console.log(element.pop());
+                    // console.log( this.isOperation.length);
+                     
+                     
+                // }   
+              //  console.log(lastNumber2 =this._operation[i].toString().split(""));
+                console.log(lastNumber2);
             }
-            this.displayCalc = lastNumber2;
+            //let list2 = lastNumber2.join("");
         }
+       // lastNumber2.join("");
+        console.log(this._operation = lastNumber2);
 
+        this.displayCalc = lastNumber2;
 
 //https://pt.stackoverflow.com/questions/345796/como-limpar-remover-todos-elementos-do-array-em-javascript
 /*
