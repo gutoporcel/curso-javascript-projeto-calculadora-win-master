@@ -186,7 +186,7 @@ class CalcController{
     get displayCalc(){
          return this._displayCalcEl.innerHTML;
     }
-    
+    ///////////////////////////////////////////////////////////
     set displayCalc(value){
         if(value.toString().length > 10){
 
@@ -195,7 +195,7 @@ class CalcController{
         }
         this._displayCalcEl.innerHTML = value;
     }
-
+/////////////////////////////////////////////////////////////////////////////////////////
 
     getLastItem(isOperation = true){
     
@@ -449,13 +449,14 @@ class CalcController{
             if(!this.isOperation(this._operation[i])){//  se nao for um aperador   a esclamação esta negando
                 console.log(lastNumber2 =this._operation[i].toString().split(""));
                  //for (let a = lastNumber2.length-1; a >=0 ; a--) {
-                     
+                     let v2 ;
                     console.log(lastNumber2.pop());
-                    lastNumber2.join("");
+                   console.log(v2 =  lastNumber2.join(""));
+                   lastNumber2 = v2.toString();
                   //  console.log(this._operation = lastNumber2);
                     // console.log(element.pop());
                     // console.log( this.isOperation.length);
-                     
+                    this.addOperation(this._operation);
                      
                 // }   
               //  console.log(lastNumber2 =this._operation[i].toString().split(""));
@@ -464,8 +465,8 @@ class CalcController{
             //let list2 = lastNumber2.join("");
         }
        // lastNumber2.join("");
-        console.log(this._operation = lastNumber2);
-
+        //console.log(this._operation = v2);
+this.addOperation(this._operation);
         this.displayCalc = lastNumber2;
 
 //https://pt.stackoverflow.com/questions/345796/como-limpar-remover-todos-elementos-do-array-em-javascript
