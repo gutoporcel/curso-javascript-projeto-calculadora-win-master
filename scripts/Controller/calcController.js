@@ -446,16 +446,26 @@ class CalcController{
     clearlastNumber(){
         let lastNumber2 =[];
         let v2 ;
-   
-        console.log(lastNumber2 =this._operation.toString().split(""));
-        lastNumber2.pop();
-        console.log(lastNumber2);
+        console.log(this._lastNumber =this.getLastItem(false)); 
+        // console.log(this.lastNumber);
+        console.log(this.lastNumber =this._operation.toString().split(""));
+        this.lastNumber.pop();
+        console.log(this.lastNumber);
         lastNumber2 = lastNumber2.join("");
-      // console.log( lastNumber2 =this.getLastItem()); 
-    
+        this.getLastItem();
         
+        //this.pushOperation(lastNumber2);
+      // console.log( lastNumber2 =this.getLastItem()); 
+      if (this._operation.length < 3 ){
+
+        let firstItem = this._operation[0];
+        this._operation= [firstItem, this._lastOperator,this._lastNumber];
+
+    }
+       // this.addOperation(lastNumber2);
        console.log(this.setLastOperation(lastNumber2));
        this.displayCalc = lastNumber2;
+       //this.pushOperation(lastNumber2);
       // console.log(this._operation = lastNumber2);
       //  pushOperation(v2);
 
@@ -559,6 +569,8 @@ class CalcController{
 
        this.currentDate = value;
    }
+
+
 
 
 
