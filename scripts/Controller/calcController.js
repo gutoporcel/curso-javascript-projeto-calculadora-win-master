@@ -53,7 +53,7 @@ class CalcController{
 
 
     }
-    //metodo de color na area de transferencia
+    //metodo de colar na area de transferencia
     pasteFromClipboard(){
     
         document.addEventListener('paste', e=>{
@@ -445,7 +445,22 @@ class CalcController{
     
     clearlastNumber(){
         let lastNumber2 =[];
-        for (let i = this._operation.length-1; i >=0; i--) {
+        let v2 ;
+   
+        console.log(lastNumber2 =this._operation.toString().split(""));
+        lastNumber2.pop();
+        console.log(lastNumber2);
+        lastNumber2 = lastNumber2.join("");
+      // console.log( lastNumber2 =this.getLastItem()); 
+    
+        
+       console.log(this.setLastOperation(lastNumber2));
+       this.displayCalc = lastNumber2;
+      // console.log(this._operation = lastNumber2);
+      //  pushOperation(v2);
+
+
+     /*   for (let i = this._operation.length-1; i >=0; i--) {
             if(!this.isOperation(this._operation[i])){//  se nao for um aperador   a esclamação esta negando
                 console.log(lastNumber2 =this._operation[i].toString().split(""));
                  
@@ -490,8 +505,8 @@ class CalcController{
     }
 
 
-    getLastOperation(value){
-    
+    getLastOperation(){
+       // getLastOperation(value)
     
         return this._operation[this._operation.length-1];
      }
