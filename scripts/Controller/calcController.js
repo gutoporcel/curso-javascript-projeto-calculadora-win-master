@@ -444,72 +444,36 @@ class CalcController{
     }
     
     clearlastNumber(){
-       // let lastNumber2 =[];
-        let v2 ;
-        console.log(this._lastNumber =this.getLastItem(false)); 
-        // console.log(this.lastNumber);
-        console.log(this.lastNumber =this._operation.toString().split(""));
-        this.lastNumber.pop();
-        console.log(this.lastNumber);
-        this.lastNumber = this.lastNumber.join("");
-       // this.getLastItem();
+    
+      
+        let v1 = this._operation[0];
+        let v2 = this._operation[2];
+
+
+        if(!v2){
+            console.log(v1=v1.split(""));
+            v1.pop();
+            console.log(v1=v1.join(""));
+            this.displayCalc= v1;
+    
+           // console.log(this._operation);
         
-        //this.pushOperation(lastNumber2);
-      // console.log( lastNumber2 =this.getLastItem()); 
-      /*if (this._operation.length < 3 ){
+            this._operation.splice(0,this._operation[0],v1);
+            console.log(this._operation);
 
-        let firstItem = this._operation[0];
-        this._operation= [firstItem, this._lastOperator,this._lastNumber];
-
-    }*/
-       // this.addOperation(lastNumber2);
-       console.log(this.setLastOperation(this.lastNumber));
-       this.displayCalc = this.lastNumber;
-       //this.pushOperation(lastNumber2);
-      // console.log(this._operation = lastNumber2);
-      //  pushOperation(v2);
+        }else{
+            console.log(v2=v2.split(""));
+            v2.pop();
+            console.log(v2=v2.join(""));
+            
+            this._operation.splice(2,this._operation[2],v2);
+            this.displayCalc= v2;
+            console.log(this._operation);
 
 
-     /*   for (let i = this._operation.length-1; i >=0; i--) {
-            if(!this.isOperation(this._operation[i])){//  se nao for um aperador   a esclamação esta negando
-                console.log(lastNumber2 =this._operation[i].toString().split(""));
-                 
-                     let v2 ;
-                    console.log(lastNumber2.pop());
-                   console.log(v2 =  lastNumber2.join(""));
-                 
-                   console.log(this.pushOperation(v2));
-                   console.log( "valor atte  aqui");
-                  //  console.log(this._operation = lastNumber2);
-                                     // console.log( this.isOperation.length);
-                    this._operation= [];
-                  //  this._operation.push(v2)
-                    this.addOperation(this._operation);
-                     
-                // }   
-              //  console.log(lastNumber2 =this._operation[i].toString().split(""));
-                console.log(lastNumber2);
-            }
-            //let list2 = lastNumber2.join("");
+
         }
-       // lastNumber2.join("");
-        //console.log(this._operation = v2);
-      //  pushOperation(v2);
-//this.addOperation(v2);
-     //   this.displayCalc = v2;
-
-//https://pt.stackoverflow.com/questions/345796/como-limpar-remover-todos-elementos-do-array-em-javascript
-/*
-    let lista = this._operation.toString().split('');
-    console.log(lista.length);
-    console.log(lista.pop());
-    this.setLastNumberToDisplay();
-    console.log(lista);
-    console.log( lista.join(' '));
-    //lista2 = lista.join(' '); 
-    this._operation = lista2.toString();
-    this.displayCalc = lista.toString();
- */
+      
         
 
     }
