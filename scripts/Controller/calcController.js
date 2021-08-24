@@ -449,9 +449,9 @@ class CalcController{
         let v1 = this._operation[0];
         let v2 = this._operation[2];
 
-
+ 
         if(!v2){
-            console.log(v1=v1.split(""));
+            console.log(v1=v1.toString().split(""));
             v1.pop();
             console.log(v1=v1.join(""));
             this.displayCalc= v1;
@@ -460,9 +460,11 @@ class CalcController{
         
             this._operation.splice(0,this._operation[0],v1);
             console.log(this._operation);
+            //this.calc()
+            this.setLastNumberToDisplay();
 
         }else{
-            console.log(v2=v2.split(""));
+            console.log(v2=v2.toString().split(""));
             v2.pop();
             console.log(v2=v2.join(""));
             
