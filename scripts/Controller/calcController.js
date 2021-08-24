@@ -455,9 +455,9 @@ class CalcController{
             v1.pop();
             console.log(v1=v1.join(""));
             this.displayCalc= v1;
-    
-           // console.log(this._operation);
-        
+         //   this.pushOperation(v1);
+            console.log(this._operation);
+           //this.pushOperation(v1);
             this._operation.splice(0,this._operation[0],v1);
             console.log(this._operation);
             //this.calc()
@@ -467,6 +467,7 @@ class CalcController{
             console.log(v2=v2.toString().split(""));
             v2.pop();
             console.log(v2=v2.join(""));
+           //this.pushOperation(v2);
             
             this._operation.splice(2,this._operation[2],v2);
             this.displayCalc= v2;
