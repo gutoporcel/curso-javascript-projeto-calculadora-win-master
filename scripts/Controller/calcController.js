@@ -444,7 +444,58 @@ class CalcController{
     }
     
     clearlastNumber(){
-    
+
+
+
+
+/*
+
+        let v1 = this._operation[0];
+        let v2 = this._operation[2];
+        //console.log(this.pushOperation(3));
+        console.log(this.getLastItem(true));
+        console.log(this.getResult());
+        console.log(this.addOperation('-'));
+        console.log(this.getLastOperation());
+        if(!v2){
+            console.log(v1=v1.toString().split(""));
+            v1.pop();
+            console.log(v1=v1.join(""));
+            this.displayCalc= v1;
+         //   this.pushOperation(v1);
+            console.log(this._operation);
+           //this.pushOperation(v1);
+           console.log(this.pushOperation(v1));
+            //this._operation.splice(0,this._operation[0],v1);
+            console.log(this._operation);
+            //this.calc()
+            this.setLastNumberToDisplay();
+
+        }else if(this.getLastItem(true)){
+            console.log(v2=v2.toString().split(""));
+            v2.pop();
+            console.log(v2=v2.join(""));
+           //this.pushOperation(v2);
+            
+            this._operation.splice(2,this._operation[2],v2);
+            this.displayCalc= v2;
+            console.log(this._operation);
+
+
+
+        }
+      
+
+
+
+
+*/
+
+console.log(this.getLastOperation().toString() + '/');
+console.log(this.setLastOperation(this.getLastOperation().toString() + '/'));
+
+
+    ///////funcionando
       
         let v1 = this._operation[0];
         let v2 = this._operation[2];
@@ -477,7 +528,7 @@ class CalcController{
 
         }
       
-        
+  //////funcionando      
 
     }
 
