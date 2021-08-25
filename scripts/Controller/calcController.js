@@ -491,43 +491,60 @@ class CalcController{
 
 */
 
-console.log(this.getLastOperation().toString() + '/');
-console.log(this.setLastOperation(this.getLastOperation().toString() + '/'));
-
-
+//console.log(this.getLastOperation().toString());
+//console.log(this.setLastOperation(this.getLastOperation().toString()));
+//console.log(this.pushOperation(22));
+//console.log(this._lastNumber);
+//console.log(this.isOperation(2222));
     ///////funcionando
       
         let v1 = this._operation[0];
         let v2 = this._operation[2];
+        console.log();
 
+ try {
+     
  
-        if(!v2){
+        if(this._operation.length < 2 && this._operation.length > 0){
+           console.log( this._operation =[]);
             console.log(v1=v1.toString().split(""));
             v1.pop();
             console.log(v1=v1.join(""));
             this.displayCalc= v1;
-         //   this.pushOperation(v1);
+           
             console.log(this._operation);
-           //this.pushOperation(v1);
+           
+          //  console.log( this.addOperation(v1));
             this._operation.splice(0,this._operation[0],v1);
             console.log(this._operation);
-            //this.calc()
+            
             this.setLastNumberToDisplay();
+            console.log( v1 =this.getResult());
+            console.log(v1);
+            
 
-        }else{
+        }else if(this._operation.length >= 2 ){
+           
             console.log(v2=v2.toString().split(""));
             v2.pop();
             console.log(v2=v2.join(""));
            //this.pushOperation(v2);
-            
-            this._operation.splice(2,this._operation[2],v2);
+           console.log(this.setLastOperation(v2));
+            //this._operation.splice(2,this._operation[2],v2);
             this.displayCalc= v2;
             console.log(this._operation);
+            this.setLastNumberToDisplay(); 
+          //  console.log( this.getResult());
 
-
-
+        }else{
+            this.setLastNumberToDisplay(); 
         }
-      
+
+
+    } catch (error) {
+       error = this.setLastNumberToDisplay();
+    }
+     //console.log( this.displayCalc = this.getResult());
   //////funcionando      
 
     }
