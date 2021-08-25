@@ -502,7 +502,7 @@ class CalcController{
         let v2 = this._operation[2];
 
  
-        if(!v2){
+        if(this._operation.length < 2 ){
             console.log(v1=v1.toString().split(""));
             v1.pop();
             console.log(v1=v1.join(""));
@@ -511,16 +511,13 @@ class CalcController{
             console.log(this._operation);
            //this.pushOperation(v1);
            
-            
+            this._operation.splice(0,this._operation[0],v1);
             console.log(this._operation);
             //this.calc()
             this.setLastNumberToDisplay();
             console.log( v1 =this.getResult());
-            this._operation.splice(0,this._operation[0],this.getResult());
-            console.log(this.getResult());
 
-            
-        }else{
+        }else if(this._operation.length > 2 ){
             console.log(v2=v2.toString().split(""));
             v2.pop();
             console.log(v2=v2.join(""));
@@ -532,8 +529,12 @@ class CalcController{
 
             console.log( this.getResult());
 
+        }else{
+            this.displayCalc = this.getResult();
+
+
         }
-     console.log( this.getResult());
+     //console.log( this.displayCalc = this.getResult());
   //////funcionando      
 
     }
