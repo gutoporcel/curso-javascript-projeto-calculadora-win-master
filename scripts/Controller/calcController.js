@@ -493,8 +493,9 @@ class CalcController{
 
 //console.log(this.getLastOperation().toString() + '/');
 //console.log(this.setLastOperation(this.getLastOperation().toString() + '/'));
+//console.log(this.pushOperation(22));
 
-
+//console.log(this.isOperation(2222));
     ///////funcionando
       
         let v1 = this._operation[0];
@@ -514,6 +515,7 @@ class CalcController{
             console.log(this._operation);
             //this.calc()
             this.setLastNumberToDisplay();
+            console.log( v1 =this.getResult());
 
         }else{
             console.log(v2=v2.toString().split(""));
@@ -525,10 +527,10 @@ class CalcController{
             this.displayCalc= v2;
             console.log(this._operation);
 
-
+            console.log( this.getResult());
 
         }
-      
+     console.log( this.getResult());
   //////funcionando      
 
     }
