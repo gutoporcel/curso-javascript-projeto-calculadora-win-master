@@ -511,12 +511,15 @@ class CalcController{
             console.log(this._operation);
            //this.pushOperation(v1);
            
-            this._operation.splice(0,this._operation[0],v1);
+            
             console.log(this._operation);
             //this.calc()
             this.setLastNumberToDisplay();
             console.log( v1 =this.getResult());
+            this._operation.splice(0,this._operation[0],this.getResult());
+            console.log(this.getResult());
 
+            
         }else{
             console.log(v2=v2.toString().split(""));
             v2.pop();
