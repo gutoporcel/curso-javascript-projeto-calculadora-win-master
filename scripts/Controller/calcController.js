@@ -533,8 +533,8 @@ class CalcController{
             //this._operation.splice(2,this._operation[2],v2);
             this.displayCalc= v2;
             console.log(this._operation);
-
-            console.log( this.getResult());
+            this.setLastNumberToDisplay(); 
+          //  console.log( this.getResult());
 
         }else{
             this.setLastNumberToDisplay(); 
