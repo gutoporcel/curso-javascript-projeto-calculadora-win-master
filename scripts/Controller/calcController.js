@@ -523,7 +523,7 @@ class CalcController{
             console.log(v1);
             
 
-        }else if(this._operation.length > 2){
+        }else if(this._operation.length >= 2 ){
            
             console.log(v2=v2.toString().split(""));
             v2.pop();
