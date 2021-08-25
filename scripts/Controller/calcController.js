@@ -500,13 +500,13 @@ class CalcController{
       
         let v1 = this._operation[0];
         let v2 = this._operation[2];
-        console.log();
+        //console.log();
 
  try {
      
  
         if(this._operation.length < 2 && this._operation.length > 0){
-           console.log( this._operation =[]);
+           //console.log( this._operation =[]);
             console.log(v1=v1.toString().split(""));
             v1.pop();
             console.log(v1=v1.join(""));
@@ -520,7 +520,7 @@ class CalcController{
             
             this.setLastNumberToDisplay();
             console.log( v1 =this.getResult());
-            console.log(v1);
+          //  console.log(v1);
             
 
         }else if(this._operation.length >= 2 ){
