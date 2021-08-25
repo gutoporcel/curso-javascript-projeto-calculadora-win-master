@@ -498,14 +498,14 @@ class CalcController{
 //console.log(this.isOperation(2222));
     ///////funcionando
       
-        let v1 = this._operation[0];
-        let v2 = this._operation[2];
+       
         //console.log();
 
  try {
-     
+    let v1 = this._operation[0];
+    let v2 = this._operation[2];
  
-        if(this._operation.length < 2 && this._operation.length > 0){
+        if(this._operation.length < 2 && this._operation.length > 0 && v1 != ""){
            //console.log( this._operation =[]);
             console.log(v1=v1.toString().split(""));
             v1.pop();
@@ -523,26 +523,31 @@ class CalcController{
           //  console.log(v1);
             
 
-        }else if(this._operation.length >= 2 ){
+        }else if(this._operation.length >= 2  && v2 != ""){
            
             console.log(v2=v2.toString().split(""));
             v2.pop();
             console.log(v2=v2.join(""));
            //this.pushOperation(v2);
            console.log(this.setLastOperation(v2));
-            //this._operation.splice(2,this._operation[2],v2);
-            this.displayCalc= v2;
+           // this._operation.splice(0,this._operation[0],this.getResult().toString());
+            this.displayCalc= v2
             console.log(this._operation);
+          //  this.setLastNumberToDisplay(); 
+         // console.log( this.getResult());
+            //v1= this.getResult();
+        }else if(this._operation.length < 1){
             this.setLastNumberToDisplay(); 
-          //  console.log( this.getResult());
-
-        }else{
-            this.setLastNumberToDisplay(); 
+            console.log("operation vazio");
         }
 
 
-    } catch (error) {
-       error = this.setLastNumberToDisplay();
+    } catch (e) {
+        setTimeout(()=>{
+            //this.setError();
+            this.displayCalc= " ";
+        },1);
+        
     }
      //console.log( this.displayCalc = this.getResult());
   //////funcionando      
