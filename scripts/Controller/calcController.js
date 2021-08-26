@@ -525,26 +525,31 @@ class CalcController{
            //console.log( this._operation =[]);
             console.log(v1=v1.toString().split(""));
             v1.pop();
+            let v4;
             console.log(v1=v1.join(""));
             this.displayCalc= v1;
-            this._operation=[this.getResult()];
+           
+            this._operation=[v1];
             console.log(this._operation);
-            
-          //  console.log( this.addOperation(v1));
+            //this.setLastNumberToDisplay();
+          // console.log( this.addOperation(v1));
            // this._operation.splice(0,this._operation[0],v1);
-            console.log(this._operation);
+            //console.log(this._operation);
             
-            this.setLastNumberToDisplay();
-            console.log( v1 =this.getResult());
+            
+            console.log( v1 = this.getResult());
+            
           //  console.log(v1);
             
 
-        }else if(this._operation.length >= 2  && v2 != ""){
+        }else if(this._operation.length > 2  && v2 != ""){
+           
            // this._operation=[v1];
             console.log(v2=v2.toString().split(""));
             v2.pop();
             console.log(v2=v2.join(""));
-           //this.pushOperation(v2);
+  
+          
            console.log(this.setLastOperation(v2));
            // this._operation.splice(0,this._operation[0],this.getResult().toString());
             this.displayCalc= v2
@@ -555,7 +560,7 @@ class CalcController{
         }else if(isNaN(this._operation)){
            // this.setLastNumberToDisplay() ; 
             console.log("operation vazio");
-            //this.displayCalc= this.getResult();
+          // this._operation = [this.getResult()];
         }/*else if(isNaN(this._operation)){
             this.setLastNumberToDisplay(); 
 
