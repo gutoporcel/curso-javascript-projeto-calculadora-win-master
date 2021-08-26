@@ -529,7 +529,7 @@ class CalcController{
             this.displayCalc= v1;
            
             console.log(this._operation);
-            this._operation=[v1]
+            this._operation=[v1];
           //  console.log( this.addOperation(v1));
            // this._operation.splice(0,this._operation[0],v1);
             console.log(this._operation);
@@ -540,7 +540,7 @@ class CalcController{
             
 
         }else if(this._operation.length >= 2  && v2 != ""){
-           
+           // this._operation=[v1];
             console.log(v2=v2.toString().split(""));
             v2.pop();
             console.log(v2=v2.join(""));
