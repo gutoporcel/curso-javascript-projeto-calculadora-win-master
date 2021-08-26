@@ -164,7 +164,19 @@ class CalcController{
            result /= 100;
            this._operation =[result];
 
-        } else {
+        }  else {
+        
+            this._operation =[result];
+
+           if(last) this._operation.push(last); 
+
+        }
+        if(last =='x²'){
+
+            console.log(  result=  result*result);
+             console.log(this._operation=[result]);
+   
+           } else {
         
             this._operation =[result];
 
@@ -330,6 +342,7 @@ class CalcController{
                 case'*':
                 case'/':
                 case'%':
+                case'x²':
                     this.addOperation(e.key);
                     break;
                 case 'Enter':
@@ -394,6 +407,9 @@ class CalcController{
                 break;
             case 'porcento':
                 this.addOperation('%');
+                break;
+            case 'x²':
+               console.log( this.addOperation('x²'));
                 break;
             case 'igual':
                 this.calc();
@@ -513,9 +529,9 @@ class CalcController{
             this.displayCalc= v1;
            
             console.log(this._operation);
-           
+            this._operation=[v1]
           //  console.log( this.addOperation(v1));
-            this._operation.splice(0,this._operation[0],v1);
+           // this._operation.splice(0,this._operation[0],v1);
             console.log(this._operation);
             
             this.setLastNumberToDisplay();
@@ -536,10 +552,14 @@ class CalcController{
           //  this.setLastNumberToDisplay(); 
          // console.log( this.getResult());
             //v1= this.getResult();
-        }else if(this._operation.length < 1){
+        }else if(isNaN(this._operation)){
             this.setLastNumberToDisplay(); 
             console.log("operation vazio");
+        }/*else if(isNaN(this._operation)){
+            this.setLastNumberToDisplay(); 
+
         }
+ */
 
 
     } catch (e) {
