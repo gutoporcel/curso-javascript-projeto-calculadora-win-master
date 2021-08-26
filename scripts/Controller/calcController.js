@@ -527,9 +527,9 @@ class CalcController{
             v1.pop();
             console.log(v1=v1.join(""));
             this.displayCalc= v1;
-           
+            this._operation=[this.getResult()];
             console.log(this._operation);
-            this._operation=[v1];
+            
           //  console.log( this.addOperation(v1));
            // this._operation.splice(0,this._operation[0],v1);
             console.log(this._operation);
@@ -553,8 +553,9 @@ class CalcController{
          // console.log( this.getResult());
             //v1= this.getResult();
         }else if(isNaN(this._operation)){
-            this.setLastNumberToDisplay(); 
+           // this.setLastNumberToDisplay() ; 
             console.log("operation vazio");
+            //this.displayCalc= this.getResult();
         }/*else if(isNaN(this._operation)){
             this.setLastNumberToDisplay(); 
 
