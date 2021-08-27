@@ -162,19 +162,13 @@ class CalcController{
         if (last == '%') {
 
            result /= 100;
-           this._operation =[result];
+          console.log( this._operation =[result]);
 
-        }  else {
-        
-            this._operation =[result];
+        }  else if(last =='x²'){
+            let v1;
 
-           if(last) this._operation.push(last); 
-
-        }
-        if(last =='x²'){
-
-            console.log(  result=  result*result);
-             console.log(this._operation=[result]);
+            console.log( v1 =  result*result);
+             console.log(this._operation=[v1]);
    
            } else {
         
@@ -409,7 +403,7 @@ class CalcController{
                 this.addOperation('%');
                 break;
             case 'x²':
-               console.log( this.addOperation('x²'));
+               console.log( this.potencia());
                 break;
             case 'igual':
                 this.calc();
@@ -440,7 +434,19 @@ class CalcController{
         }
     }
 
+potencia(){
+let v1 =this._operation[0];
+let result =v1*v1;
+this.displayCalc= result;
+this._operation =[];
 
+console.log(this._operation[result]);
+
+this.pushOperation(result.toString());
+
+//return(v1*v1);
+
+}
 
     clearAll(){
     
@@ -589,7 +595,7 @@ class CalcController{
 
      isOperation(value){
     
-        return ( ['+', '-', '*', '%', '/'].indexOf(value) > -1);
+        return ( ['+', '-', '*', '%', '/','x²'].indexOf(value) > -1);
  
      }
 
