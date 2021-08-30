@@ -16,6 +16,14 @@ class CalcController{
         this.initButtonsEvensts();
         this.initKeyboard();
         this.copyToClipboard();
+        this._postivoNegativo = false
+
+
+
+    }
+
+    togglePostivoNegativo(){
+        this._postivoNegativo = !this._postivoNegativo;
 
 
     }
@@ -96,7 +104,7 @@ class CalcController{
       
         this.setLastNumberToDisplay();
         this.pasteFromClipboard();
-
+///////////////// evento de duplo  click
         document.querySelectorAll('.btn-c').forEach(btn =>{
 
             btn.addEventListener('dblclick', e=>{
@@ -403,13 +411,20 @@ class CalcController{
                 this.addOperation('%');
                 break;
             case 'x²':
-               console.log( this.potencia());
+               this.potencia();
+                break;
+            case 'raiz':
+                console.log(this.displayCalc=Math.sqrt(this._operation[0]));
                 break;
             case 'igual':
                 this.calc();
                 break; 
             case'seta':
                 this.clearlastNumber();
+                break;
+            case'+-':
+                this.negativoPositivo();
+               
                 break;
             case 'ponto':
                 this.addDot('.');
@@ -434,8 +449,28 @@ class CalcController{
         }
     }
 
+negativoPositivo(){
+
+    let v1 =this._operation[0];
+    let v2 =this._operation[2];
+    //return(-1 * v1);
+    if(v1){
+        console.log( this.displayCalc = -1*v1);
+
+
+    }else if (v2){
+        console.log(this.displayCalc = -1*v2);
+
+
+    }else if(this.getResult()){
+        console.log(this.displayCalc = -1*this.getResult())
+    }
+
+
+}
+     
 potencia(){
-let v1 =this._operation[0];
+
 let result =v1*v1;
 this.displayCalc= result;
 this._operation =[];
