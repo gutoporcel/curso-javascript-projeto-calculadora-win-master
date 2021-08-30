@@ -105,7 +105,7 @@ class CalcController{
         this.setLastNumberToDisplay();
         this.pasteFromClipboard();
 ///////////////// evento de duplo  click
-        document.querySelectorAll('.btn-c').forEach(btn =>{
+        document.querySelectorAll('btn-c').forEach(btn =>{
 
             btn.addEventListener('dblclick', e=>{
 
@@ -116,6 +116,16 @@ class CalcController{
 
         });
         
+     /*   document.querySelectorAll('btn-+-').forEach(btn =>{
+
+            btn.addEventListener('dblclick', e=>{
+
+                this.togglePostivoNegativo();
+
+
+            });
+
+        });*/
     }
  //metodo de  seta ultimo numero ok 
     setLastNumberToDisplay(){
@@ -423,7 +433,7 @@ class CalcController{
                 this.clearlastNumber();
                 break;
             case'+-':
-                this.negativoPositivo();
+                this.negativo();
                
                 break;
             case 'ponto':
@@ -449,7 +459,7 @@ class CalcController{
         }
     }
 
-negativoPositivo(){
+negativo(){
 
     let v1 =this._operation[0];
     let v2 =this._operation[2];
@@ -464,6 +474,25 @@ negativoPositivo(){
 
     }else if(this.getResult()){
         console.log(this.displayCalc = -1*this.getResult())
+    }
+
+
+}
+positivo(){
+
+    let v1 =this._operation[0];
+    let v2 =this._operation[2];
+    //return(-1 * v1);
+    if(v1){
+        console.log( this.displayCalc = 1*v1);
+
+
+    }else if (v2){
+        console.log(this.displayCalc = 1*v2);
+
+
+    }else if(this.getResult()){
+        console.log(this.displayCalc = 1*this.getResult())
     }
 
 
