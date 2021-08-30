@@ -16,17 +16,13 @@ class CalcController{
         this.initButtonsEvensts();
         this.initKeyboard();
         this.copyToClipboard();
-        this._postivoNegativo = false
+     
 
 
 
     }
 
-    togglePostivoNegativo(){
-        this._postivoNegativo = !this._postivoNegativo;
-
-
-    }
+  
 
     toggleAudio(){
         this._audioOnOff = !this._audioOnOff;
@@ -365,8 +361,9 @@ class CalcController{
                 case ',':
                 case '.':
                     this.addDot('.');
-                    
                     break;
+                case'+-':
+                    this.negativoPositvo();
                 case '0':
                 case '1':
                 case '2':
@@ -433,8 +430,10 @@ class CalcController{
                 this.clearlastNumber();
                 break;
             case'+-':
-                this.negativo();
-               
+                this.negativoPositvo();
+                break;
+            case'¹/x':
+                this.umSobreX();
                 break;
             case 'ponto':
                 this.addDot('.');
@@ -458,57 +457,98 @@ class CalcController{
                 break;
         }
     }
-
-negativo(){
-
-    let v1 =this._operation[0];
+    umSobreX(){
+        
+    let v1 =this._operation[0]; //= this._operation =[-1];
     let v2 =this._operation[2];
+   // console.log(v1);
+    let result;
     //return(-1 * v1);
-    if(v1){
-        console.log( this.displayCalc = -1*v1);
+    if(!v2){
+        console.log(v1);
+      console.log(  result = 1/v1);
+        console.log( this.getResult() );
+        console.log( this.displayCalc = result);
+      console.log(  this._operation= [result]);
+
+    }else if (v1){
+        console.log(v2);
+        result =-1/v2;
+        this.displayCalc =result;
+        console.log (this._operation[2]= [result]);
+       // console.log(this.displayCalc = -1*v2);
 
 
-    }else if (v2){
-        console.log(this.displayCalc = -1*v2);
+    }else{
+        this.setError();
+    }
 
 
-    }else if(this.getResult()){
-        console.log(this.displayCalc = -1*this.getResult())
+
+
+
+    }
+
+negativoPositvo(){
+
+    let v1 =this._operation[0]; //= this._operation =[-1];
+    let v2 =this._operation[2];
+   // console.log(v1);
+    let result;
+    //return(-1 * v1);
+    if(!v2){
+        console.log(v1);
+        result = -1*v1;
+        console.log( this.displayCalc = result);
+      console.log(  this._operation= [result]);
+
+    }else if (v1){
+        console.log(v2);
+        result =-1*v2;
+        this.displayCalc =result;
+        console.log (this._operation[2]= [result]);
+       // console.log(this.displayCalc = -1*v2);
+
+
+    }else{
+        this.setError();
+
     }
 
 
 }
-positivo(){
 
-    let v1 =this._operation[0];
-    let v2 =this._operation[2];
-    //return(-1 * v1);
-    if(v1){
-        console.log( this.displayCalc = 1*v1);
-
-
-    }else if (v2){
-        console.log(this.displayCalc = 1*v2);
-
-
-    }else if(this.getResult()){
-        console.log(this.displayCalc = 1*this.getResult())
-    }
-
-
-}
      
 potencia(){
+    let v1 =this._operation[0]; //= this._operation =[-1];
+    let v2 =this._operation[2];
+    let result;
+if(!v2){
+     result =Math.pow(v1, 2);
+    this.displayCalc= result;
+   // this._operation =[];
 
-let result =v1*v1;
-this.displayCalc= result;
-this._operation =[];
+console.log(this._operation=[result]);
 
-console.log(this._operation[result]);
+//this.pushOperation(result.toString());
+}else if(v1){
+     result =Math.pow(v2, 2);
+    this.displayCalc= result;
+   // this._operation =[];
 
-this.pushOperation(result.toString());
+   console.log (this._operation[2]= [result]);
+   //console.log (this._operation);
 
-//return(v1*v1);
+
+
+
+}else{
+
+    this.setError();
+
+}
+
+
 
 }
 
