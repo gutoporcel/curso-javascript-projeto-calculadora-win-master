@@ -111,17 +111,7 @@ class CalcController{
             });
 
         });
-        
-     /*   document.querySelectorAll('btn-+-').forEach(btn =>{
 
-            btn.addEventListener('dblclick', e=>{
-
-                this.togglePostivoNegativo();
-
-
-            });
-
-        });*/
     }
  //metodo de  seta ultimo numero ok 
     setLastNumberToDisplay(){
@@ -178,13 +168,7 @@ class CalcController{
            result /= 100;
           console.log( this._operation =[result]);
 
-        }  else if(last =='x²'){
-            let v1;
-
-            console.log( v1 =  result*result);
-             console.log(this._operation=[v1]);
-   
-           } else {
+        }  else {
         
             this._operation =[result];
 
@@ -421,7 +405,7 @@ class CalcController{
                this.potencia();
                 break;
             case 'raiz':
-                console.log(this.displayCalc=Math.sqrt(this._operation[0]));
+                this.displayCalc=Math.sqrt(this._operation[0]);
                 break;
             case 'igual':
                 this.calc();
@@ -459,98 +443,69 @@ class CalcController{
     }
     umSobreX(){
         
-    let v1 =this._operation[0]; //= this._operation =[-1];
-    let v2 =this._operation[2];
-   // console.log(v1);
+    let v1 =this._operation[0]; 
     let result;
-    //return(-1 * v1);
-    if(!v2){
-        console.log(v1);
-      console.log(  result = 1/v1);
-        console.log( this.getResult() );
-        console.log( this.displayCalc = result);
-      console.log(  this._operation= [result]);
+        if(!v2){
+        
+            result = 1/v1;
+            this.getResult() ;                 
+            this.displayCalc = result;
+            this._operation= [result];
 
-    }else if (v1){
-        console.log(v2);
-        result =-1/v2;
-        this.displayCalc =result;
-        console.log (this._operation[2]= [result]);
-       // console.log(this.displayCalc = -1*v2);
-
-
-    }else{
-        this.setError();
+        }else if (v1){
+        
+            result =-1/v2;
+            this.displayCalc =result;
+            this._operation[2]= [result];
+        }else{
+            this.setError();
+        }
     }
 
+    negativoPositvo(){
 
+        let v1 =this._operation[0]; 
+        let v2 =this._operation[2];
+        let result;
+       
+            if(!v2){
+                result = -1*v1;
+                this.displayCalc = result;
+                console.log(this._operation= [result]);
+                console.log("guto1")
 
+            }else if (v1){
+                result =-1*v2;
+                this.displayCalc =result;
+                this._operation[2]= [result];
+                console.log("guto2")
+            }
+            else  {
+                console.log("guto3")
+                this.setError();
+            }
 
-
-    }
-
-negativoPositvo(){
-
-    let v1 =this._operation[0]; //= this._operation =[-1];
-    let v2 =this._operation[2];
-   // console.log(v1);
-    let result;
-    //return(-1 * v1);
-    if(!v2){
-        console.log(v1);
-        result = -1*v1;
-        console.log( this.displayCalc = result);
-      console.log(  this._operation= [result]);
-
-    }else if (v1){
-        console.log(v2);
-        result =-1*v2;
-        this.displayCalc =result;
-        console.log (this._operation[2]= [result]);
-       // console.log(this.displayCalc = -1*v2);
-
-
-    }else{
-        this.setError();
 
     }
 
+        
+    potencia(){
+        let v1 =this._operation[0]; //= this._operation =[-1];
+        let v2 =this._operation[2];
+        let result;
+            if(!v2){
+                result =Math.pow(v1, 2);
+                this.displayCalc= result;
+                this._operation=[result];
 
-}
-
-     
-potencia(){
-    let v1 =this._operation[0]; //= this._operation =[-1];
-    let v2 =this._operation[2];
-    let result;
-if(!v2){
-     result =Math.pow(v1, 2);
-    this.displayCalc= result;
-   // this._operation =[];
-
-console.log(this._operation=[result]);
-
-//this.pushOperation(result.toString());
-}else if(v1){
-     result =Math.pow(v2, 2);
-    this.displayCalc= result;
-   // this._operation =[];
-
-   console.log (this._operation[2]= [result]);
-   //console.log (this._operation);
-
-
-
-
-}else{
-
-    this.setError();
-
-}
-
-
-
-}
+            }else if(v1){
+                result =Math.pow(v2, 2);
+                this.displayCalc= result;
+            console.log (this._operation[2]= [result]);
+            }else{
+                this.setError();
+            }
+    }
 
     clearAll(){
     
@@ -571,123 +526,41 @@ console.log(this._operation=[result]);
     
     clearlastNumber(){
 
-
-
-
-/*
-
-        let v1 = this._operation[0];
-        let v2 = this._operation[2];
-        //console.log(this.pushOperation(3));
-        console.log(this.getLastItem(true));
-        console.log(this.getResult());
-        console.log(this.addOperation('-'));
-        console.log(this.getLastOperation());
-        if(!v2){
-            console.log(v1=v1.toString().split(""));
-            v1.pop();
-            console.log(v1=v1.join(""));
-            this.displayCalc= v1;
-         //   this.pushOperation(v1);
-            console.log(this._operation);
-           //this.pushOperation(v1);
-           console.log(this.pushOperation(v1));
-            //this._operation.splice(0,this._operation[0],v1);
-            console.log(this._operation);
-            //this.calc()
-            this.setLastNumberToDisplay();
-
-        }else if(this.getLastItem(true)){
-            console.log(v2=v2.toString().split(""));
-            v2.pop();
-            console.log(v2=v2.join(""));
-           //this.pushOperation(v2);
+        try {
+            let v1 = this._operation[0];
+            let v2 = this._operation[2];
             
-            this._operation.splice(2,this._operation[2],v2);
-            this.displayCalc= v2;
-            console.log(this._operation);
+            if(this._operation.length < 2 && this._operation.length > 0 && v1 != ""){
+
+                v1=v1.toString().split("");
+                v1.pop();
+                v1=v1.join("");
+                this.displayCalc= v1;
+                this._operation=[v1];
+                v1 = this.getResult();
+
+            }else if(this._operation.length > 2  && v2 != ""){
+                v2=v2.toString().split("");
+                v2.pop();
+                v2=v2.join("");
+                this._operation[2]=[v2];
+                this.displayCalc= v2
+                
+            }else if(isNaN(this._operation)){
+                this.displayCalc= " ";
+                console.log("operation vazio");
+                    
+            }
 
 
-
+        } catch (e) {
+            setTimeout(()=>{
+            this.setError();
+               
+            },1);
+            
         }
-      
-
-
-
-
-*/
-
-//console.log(this.getLastOperation().toString());
-//console.log(this.setLastOperation(this.getLastOperation().toString()));
-//console.log(this.pushOperation(22));
-//console.log(this._lastNumber);
-//console.log(this.isOperation(2222));
-    ///////funcionando
-      
-       
-        //console.log();
-
- try {
-    let v1 = this._operation[0];
-    let v2 = this._operation[2];
- 
-        if(this._operation.length < 2 && this._operation.length > 0 && v1 != ""){
-           //console.log( this._operation =[]);
-            console.log(v1=v1.toString().split(""));
-            v1.pop();
-            let v4;
-            console.log(v1=v1.join(""));
-            this.displayCalc= v1;
-           
-            this._operation=[v1];
-            console.log(this._operation);
-            //this.setLastNumberToDisplay();
-          // console.log( this.addOperation(v1));
-           // this._operation.splice(0,this._operation[0],v1);
-            //console.log(this._operation);
-            
-            
-            console.log( v1 = this.getResult());
-            
-          //  console.log(v1);
-            
-
-        }else if(this._operation.length > 2  && v2 != ""){
-           
-           // this._operation=[v1];
-            console.log(v2=v2.toString().split(""));
-            v2.pop();
-            console.log(v2=v2.join(""));
   
-          
-           console.log(this.setLastOperation(v2));
-           // this._operation.splice(0,this._operation[0],this.getResult().toString());
-            this.displayCalc= v2
-            console.log(this._operation);
-          //  this.setLastNumberToDisplay(); 
-         // console.log( this.getResult());
-            //v1= this.getResult();
-        }else if(isNaN(this._operation)){
-           // this.setLastNumberToDisplay() ; 
-            console.log("operation vazio");
-          // this._operation = [this.getResult()];
-        }/*else if(isNaN(this._operation)){
-            this.setLastNumberToDisplay(); 
-
-        }
- */
-
-
-    } catch (e) {
-        setTimeout(()=>{
-            //this.setError();
-            this.displayCalc= " ";
-        },1);
-        
-    }
-     //console.log( this.displayCalc = this.getResult());
-  //////funcionando      
-
     }
 
 
@@ -699,7 +572,7 @@ console.log(this._operation=[result]);
 
      isOperation(value){
     
-        return ( ['+', '-', '*', '%', '/','x²'].indexOf(value) > -1);
+        return ( ['+', '-', '*', '%', '/'].indexOf(value) > -1);
  
      }
 
